@@ -30,7 +30,7 @@
   </div>
   <div class="field">
     <%= f.label :rank %><%= mark_required(@article, :rank) %><br>
-    <%= f.select(:rank, [['Major', 1],['Minor', 2]])%>
+    <%= f.select(:rank, [['Major', 1]['Minor',2]])%>
   </div>
   <div class="actions">
     <%= f.submit %>

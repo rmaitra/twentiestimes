@@ -1,4 +1,8 @@
 The20times::Application.routes.draw do
+  resources :authors
+
+  resources :writers
+
   resources :articles
 
   get "static_pages/home"

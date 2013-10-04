@@ -1,4 +1,4 @@
-<div class = 'articles'>
+<div class = 'article'>
 <h1>Listing articles</h1>
 
 <table>
@@ -18,7 +18,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
-        <td><%= article.author %></td>
+        <td><%= Author.find(article.author_id).name %></td>
         <td><%= article.topic %></td>
         <td><%= article.content %></td>
         <td><%= link_to 'Show', article %></td>

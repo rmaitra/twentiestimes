@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The20times</title>
+  <title>The20Times</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +9,8 @@
 <body>
     <div id = 'container'>
         <div id = 'header'> 
-            <div id = 'title'>the<font color="#00688B">20</font>times</div>
-            <div id = 'tagline'>a twenty-something's news feed</div>
+            <div id = 'title'><font color="#00688B">20s</font>times</div>
+            <div id = 'tagline'>news feed for a twenty-something</div>
             
             <span id = 'navigation'> 
                 <ul>
@@ -30,9 +30,6 @@
 
         <div id = 'content_container'>
             <%= yield %>
-        </div>
-
-        <div id = 'background'>
         </div>
 
         <div id = 'footer'>

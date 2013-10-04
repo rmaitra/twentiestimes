@@ -4,5 +4,5 @@ class Article < ActiveRecord::Base
     validates_presence_of :title
     validates_presence_of :content
     validates_presence_of :topic
-    validates_presence_of :rank
+    validates_presence_or :rank
 end
