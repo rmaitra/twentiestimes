@@ -1,0 +1,167 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html,
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    font-family:'Gotham SSm',Helvetica,Arial,sans-serif;
+    background-color:#EEE;
+    height:100%;
+    z-index:-2;
+}
+
+
+#background{
+    height:600px;
+    width:100%;
+    background-image: url("http://fc00.deviantart.net/fs70/i/2013/024/7/d/golden_gate_bridge_composition_sketch_by_jasonbartlett-d5sk004.jpg");
+    background-image: url("http://img1.etsystatic.com/000/0/5669363/il_fullxfull.309893197.jpg?ref=l2");
+    z-index:-1;
+    opacity: 0.5;
+}
+
+#content {
+    min-height:100%;
+    position:relative;
+}
+
+// Content Container #################################
+#content_container{
+    position:relative;
+    top:175px;
+    width: 100%;
+    margin: 0px auto;
+    z-index:10;
+}
+    .article{
+        position:relative;
+        background:#fff;
+        border-style:solid;
+        border:solid #BBB;
+        border-width:1px;
+        padding:15px;
+        border-radius:20px;
+        color:#333;
+        box-shadow: 0px 10px 5px #111;
+        
+    }
+        #major_articles{
+            position:absolute;
+            top:0px;
+            left:50px;
+            width:700px;
+            z-index:11;                    
+        }
+        #minor_articles{
+            position:absolute;
+            top:0px;
+            left:750px;
+            width:400px;   
+            font-size:12px;                 
+        }
+        .article_title{
+            font-size:150%;
+            font-weight:bold;
+        }
+        .article_date{
+            font-style:italic;
+            color:#999;
+        }
+        .article_author{
+            font-weight:bold;
+        }
+        .article_topic{
+            position:absolute;
+            right:10px;
+            top:10px;
+            color:#aaa;
+        }
+//############################################
+
+// Header ####################################
+#header {
+    position:fixed;
+    padding-left:50px;
+    padding-top:20px;
+    width:100%;
+    height:120px;
+    font-weight:bold;
+    background-color:#fff;
+    /*border-style:solid;
+    border-bottom:solid #BBB;
+    border-left:hidden;
+    border-right:hidden;
+    border-top:hidden;*/
+    box-shadow: 0px 10px 5px #111;
+    z-index:20;
+}
+
+    #title{
+        position:absolute;
+        top:40px;
+        font-size:60px;
+        color:#555;
+    }
+
+    #tagline{
+        position:absolute;
+        top:80px;
+        font-size:15px;
+        font-style:italic;
+    }
+    
+    #icons{
+        position:absolute;
+        left:800px;
+        top:10px;
+    }
+
+    // Navigation
+    #navigation {
+        position:absolute;
+        bottom:-10px;
+        color:#555;
+    }
+
+    #navigation ul {
+        list-style-type:none;
+    }
+
+    #navigation li {
+        display:inline;
+        cursor:pointer;
+        padding-right:20px;
+        padding-left:20px;
+        font-size:20px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        font-family:'Gotham SSm',Helvetica,Arial,sans-serif; 
+        font-weight:bold; 
+    }
+
+    #navigation li:hover{
+        box-shadow: 0px 10px 5px #111;
+        color:#00688B;
+        border-radius:25px;
+    }
+    //
+
+//#############################################
+
+// Footer #####################################
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:50px;
+    background-color:#555;
+    opacity:0.7;
+    color:#fff;
+}
+
+
+//####################

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The20times</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id = 'container'>
+        <div id = 'header'> 
+            <div id = 'title'>the<font color="#00688B">20</font>times</div>
+            <div id = 'tagline'>a twenty-something's news feed</div>
+            
+            <span id = 'navigation'> 
+                <ul>
+                    <li id = 'topic_nav'> topics </li>
+                    <li id = 'writers_nav'> writers </li>
+                    <li id = 'about_nav'> about us </li>
+                    <li id = 'contact_nav'> contact </li>
+                </ul>
+            </span> 
+            
+            <div id = 'icons'>
+                <img src="http://www.candygramformongo.com/_img/home/facebook-icon.gif" height = '25px' width = '25px'></img>
+                <img src="http://www.ala.org/conferencesevents/sites/ala.org.conferencesevents/files/content/celebrationweeks/natlibraryweek/twitter-icon.png" height = '25px' width = '25px'></img>
+            </div>
+        
+        </div>
+
+        <div id = 'content_container'>
+            <%= yield %>
+        </div>
+
+        <div id = 'background'>
+        </div>
+
+        <div id = 'footer'>
+            Footer
+        </div>
+    </div>
+</body>
+</html>
