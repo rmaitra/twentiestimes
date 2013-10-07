@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The20Times</title>
+  <title>20sTimes</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,17 +9,30 @@
 <body>
     <div id = 'container'>
         <div id = 'header'> 
-            <div id = 'title'>the<font color="#00688B">20</font>times</div>
-            <div id = 'tagline'>a twenty-something's news feed</div>
+            <div id = 'title'><font color="#00688B">twenties</font>times</div>
+            <div id = 'tagline'><font color="#BBB">news feed for a twenty-something.</font></div>
             
-            <span id = 'navigation'> 
-                <ul>
-                    <li id = 'topic_nav'> topics </li>
-                    <li id = 'writers_nav'> writers </li>
+            <ul id = 'navigation'> 
+                    <li id = 'topic_nav'> topics
+                        <ul>
+                            <li id = 'topic_politics_nav'> politics </li>
+                            <li id = 'topic_coding_nav'> coding </li>
+                            <li id = 'topic_books_nav'> books </li>
+                            <li id = 'topic_stories_nav'> stories </li>
+                            <li id = 'topic_music_nav'> music </li>
+                            <li id = 'topic_science_nav'> science </li>
+                        </ul>
+                    </li>
+                    <li id = 'writers_nav'> writers 
+                        <ul>
+                             <% @authors.each do |author| %>
+                            <li id = "<%= author.name.gsub(' ','') %>"> <%= author.name %> </li>
+                            <% end %>
+                        </ul>
+                    </li>
                     <li id = 'about_nav'> about us </li>
                     <li id = 'contact_nav'> contact </li>
                 </ul>
-            </span> 
             
             <div id = 'icons'>
                 <img src="http://www.candygramformongo.com/_img/home/facebook-icon.gif" height = '25px' width = '25px'></img>
@@ -33,7 +46,10 @@
         </div>
 
         <div id = 'footer'>
-            Footer
+            <ul>
+                <li>Volunteer as a Contributer</li>
+                <li>@2013 20sTimes</li>
+            </ul>
         </div>
     </div>
 </body>

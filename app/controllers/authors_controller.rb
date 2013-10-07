@@ -10,20 +10,24 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @authors = Author.all
   end
 
   # GET /authors/new
   def new
+    @authors = Author.all
     @author = Author.new
   end
 
   # GET /authors/1/edit
   def edit
+    @authors = Author.all
   end
 
   # POST /authors
   # POST /authors.json
   def create
+    @authors = Author.all
     @author = Author.new(author_params)
 
     respond_to do |format|
@@ -40,6 +44,7 @@ class AuthorsController < ApplicationController
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
   def update
+    @authors = Author.all
     respond_to do |format|
       if @author.update(author_params)
         format.html { redirect_to @author, notice: 'Author was successfully updated.' }
@@ -54,6 +59,7 @@ class AuthorsController < ApplicationController
   # DELETE /authors/1
   # DELETE /authors/1.json
   def destroy
+    @authors = Author.all
     @author.destroy
     respond_to do |format|
       format.html { redirect_to authors_url }

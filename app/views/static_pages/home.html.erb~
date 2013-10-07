@@ -1,14 +1,21 @@
 
 <div id = 'major_articles'>
     <% @articles.each do |article| %>
-      <div class = 'article'>
-        <div class = 'article_title'><%= article.title %></div>
-        <div class = 'article_date'> Septemper 15, 2013 </div>
+      <% if article.rank == 1%>
+       <div class = 'article'>
+        <div class = 'article_title'>
+            <%= link_to(article) do %>
+              <strong><%= article.title %></strong>
+            <% end %>
+        </div> 
+        <div class = 'article_date'><%= article.created_at.to_s[0,10] %></div>
         <div class = 'article_author'> By <%= Author.find(article.author_id).name %> </div>
         <div class = 'article_topic'><%= article.topic %></div>
-        <%= article.content %>
+        </br>
+        <!--<%= raw simple_format h(article.content) %>-->
       </div>
       </br>
+      <% end %>
     <% end %>
 </div>
 
@@ -16,11 +23,16 @@
     <% @articles.each do |article| %>
       <% if article.rank == 2%>
       <div class = 'article'>
-        <div class = 'article_title'><%= article.title %></div>
-        <div class = 'article_date'> Septemper 15, 2013 </div>
+        <div class = 'article_title'>
+            <%= link_to(article) do %>
+              <strong><%= article.title %></strong>
+            <% end %>
+        </div> 
+        <div class = 'article_date'><%= article.created_at.to_s[0,10] %></div>
         <div class = 'article_author'> By <%= Author.find(article.author_id).name %> </div>
         <div class = 'article_topic'><%= article.topic %></div>
-        <%= article.content %>
+        </br>
+        <%= raw simple_format h(article.content) %>
       </div>
       </br>
       <% end %>
@@ -28,5 +40,50 @@
 </div>
 
 
+<div id = 'load_container'>
+     <% @topics.each do |topic| %>
+        <div id = "<%= topic[0] %>">
+            <% @articles.each do |article| %>                
+                <% if article.topic == topic[0] %>
+                <div class = 'article'>
+                    <div class = 'article_title'>
+                        <%= link_to(article) do %>
+                          <strong><%= article.title %></strong>
+                        <% end %></div> 
+                    <div class = 'article_date'><%= article.created_at.to_s[0,10] %></div>
+                    <div class = 'article_author'> By <%= Author.find(article.author_id).name %> </div>
+                    <div class = 'article_topic'><%= article.topic[1] %></div>
+                    </br>
+                    <%= raw simple_format h(article.content) %>
+                </div>
+                </br>
+                </br>
+                <% end %>
+            <% end %>
+        </div>
+     <% end %>
+     
+     <% @authors.each do |author| %>
+        <div id = "<%= author.name.downcase.gsub(' ', '_') %>">
+            <% @articles.each do |article| %>
+                <% if article.author_id == author.id %>
+                <div class = 'article'>
+                    <div class = 'article_title'>
+                        <%= link_to(article) do %>
+                          <strong><%= article.title %></strong>
+                        <% end %></div> 
+                    <div class = 'article_date'><%= article.created_at.to_s[0,10] %></div>
+                    <div class = 'article_author'> By <%= Author.find(article.author_id).name %> </div>
+                    <div class = 'article_topic'><%= article.topic[0] %></div>
+                    </br>
+                    <%= raw simple_format h(article.content) %>
+                </div>
+                </br>
+                </br>
+                <% end %>
+            <% end %>
+        </div>
+     <% end %>   
+</div>
 
 

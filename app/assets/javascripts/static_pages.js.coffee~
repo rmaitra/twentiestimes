@@ -8,8 +8,8 @@ $(document).ready ->
     $('#topic_science_nav').click ->
         for div in divs
             if $(div).is(":visible")
-                $(div).slideToggle("slow")
-        $('#science').slideToggle("slow")
+                $(div).fadeToggle("fast")
+        $('#science').fadeToggle("fast")
     
     $('#topic_politics_nav').click ->
         for div in divs

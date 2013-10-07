@@ -22,11 +22,11 @@
   </div>
   <div class="field">
     <%= f.label :topic %><%= mark_required(@article, :topic) %><br>
-    <%= f.text_field :topic %>
+    <%= f.select(:topic, [['politics', 'politics'],['coding', 'coding'],['science', 'science'],['stories', 'stories'],['music', 'music'],['books', 'books']])%>
   </div>
   <div class="field">
     <%= f.label :content %><%= mark_required(@article, :content) %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.label :rank %><%= mark_required(@article, :rank) %><br>
