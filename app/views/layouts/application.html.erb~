@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>20sTimes</title>
+  <title>TwentiesTimes</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,29 +9,36 @@
 <body>
     <div id = 'container'>
         <div id = 'header'> 
-            <div id = 'title'><font color="#00688B">twenties</font>times</div>
+            <div id = 'title'><%= link_to "<font color='#00688B'>twenties</font>times",  :root %></div>
             <div id = 'tagline'><font color="#BBB">news feed for a twenty-something.</font></div>
             
             <ul id = 'navigation'> 
+                    <% if params[:controller] == 'articles' %>
+                    <li id = 'about_nav'> <%= link_to 'Back', :back %> <li>
+                    <% else %>
                     <li id = 'topic_nav'> topics
                         <ul>
-                            <li id = 'topic_politics_nav'> politics </li>
-                            <li id = 'topic_coding_nav'> coding </li>
-                            <li id = 'topic_books_nav'> books </li>
-                            <li id = 'topic_stories_nav'> stories </li>
-                            <li id = 'topic_music_nav'> music </li>
-                            <li id = 'topic_science_nav'> science </li>
+                            <li>  <%= link_to 'science', {:controller => 'static_pages', :action => 'science'} %> </li>
+                            <li>  <%= link_to 'art', {:controller => 'static_pages', :action => 'art'} %> </li>
+                            <li>  <%= link_to 'politics', {:controller => 'static_pages', :action => 'politics'} %> </li>
+                            <li>  <%= link_to 'coding', {:controller => 'static_pages', :action => 'coding'} %> </li>
+                            <li>  <%= link_to 'books', {:controller => 'static_pages', :action => 'books'} %> </li>
+                            <li>  <%= link_to 'stories', {:controller => 'static_pages', :action => 'stories'} %> </li>
+                            <li>  <%= link_to 'music', {:controller => 'static_pages', :action => 'music'} %> </li>
                         </ul>
                     </li>
                     <li id = 'writers_nav'> writers 
                         <ul>
-                             <% @authors.each do |author| %>
-                            <li id = "<%= author.name.gsub(' ','') %>"> <%= author.name %> </li>
+                            <% @authors.each do |author| %>
+                                <%= link_to(author) do %>
+                                    <li><%= author.name %></li>
+                                <% end %>    
                             <% end %>
                         </ul>
                     </li>
                     <li id = 'about_nav'> about us </li>
                     <li id = 'contact_nav'> contact </li>
+                    <% end %>
                 </ul>
             
             <div id = 'icons'>
@@ -47,7 +54,7 @@
 
         <div id = 'footer'>
             <ul>
-                <li>Volunteer as a Contributer</li>
+                <li>Volunteer as a Contributer!</li>
                 <li>@2013 20sTimes</li>
             </ul>
         </div>

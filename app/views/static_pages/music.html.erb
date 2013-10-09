@@ -1,0 +1,19 @@
+<div id = 'load_container'>
+    <% @articles.each do |article| %>                
+        <% if article.topic == 'music' %>
+        <div class = 'article'>
+            <div class = 'article_title'>
+                <%= link_to(article) do %>
+                  <strong><%= article.title %></strong>
+                <% end %></div> 
+            <div class = 'article_date'><%= article.created_at.to_s[0,10] %></div>
+            <div class = 'article_author'> By <%= Author.find(article.author_id).name %> </div>
+            <div class = 'article_topic'><%= article.topic[1] %></div>
+            </br>
+            <!--<%= raw simple_format h(article.content) %>-->
+        </div>
+        </br>
+        </br>
+        <% end %>
+    <% end %>
+</div>
